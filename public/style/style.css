@@ -1,0 +1,154 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.container {
+    max-width: 1200px; /* Container genişliği */
+    margin: 0 auto; /* Ortalar */
+    padding: 20px; /* İç boşluk ekler */
+}
+
+.header {
+    display: flex;
+    justify-content: space-between; /* Elemanları iki uçta konumlandırır */
+    align-items: center; /* Dikeyde ortalar */
+    padding: 10px 20px; /* İç boşluk ekler */
+    background-color: #f8f9fa; /* Arka plan rengi */
+    margin-bottom: 40px; /* Top bar ve postlar arasındaki mesafeyi artırır */
+}
+
+.header h1 {
+    margin: 0; /* Başlık etrafındaki boşlukları kaldırır */
+    font-family: 'Montserrat', sans-serif; /* Yazı tipi Montserrat */
+    font-weight: bold; /* Kalın yazı */
+}
+
+.header button {
+    background-color: #000000; /* Buton arka plan rengi siyah */
+    color: #ffffff; /* Buton yazı rengi beyaz */
+    border: none; /* Buton kenarlıklarını kaldırır */
+    padding: 10px 20px; /* Buton iç boşlukları */
+    cursor: pointer; /* Fare imlecini işaretçi yapar */
+    border-radius: 15px; /* Buton kenarlarını yuvarlar */
+}
+
+.header button:hover {
+    background-color: #333333; /* Buton üzerine gelindiğinde arka plan rengi */
+}
+
+.posts {
+    display: flex;
+    flex-wrap: wrap; /* Postların taşmasını önler ve alt satıra geçmesini sağlar */
+    gap: 20px; /* Postlar arasındaki boşluğu azaltır */
+    justify-content: flex-start; /* Postları yatayda aralarına boşluk koyarak yerleştirir */
+}
+
+.post {
+    background-color: #ffffff; /* Post arka plan rengi beyaz */
+    border: 1px solid #dee2e6; /* Post kenarlık rengi */
+    border-radius: 10px; /* Post kenarlarını yuvarlar */
+    padding: 20px; /* İç boşluk ekler */
+    width: calc(33.333% - 20px); /* Post genişliği */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Hafif gölge ekler */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 250px; /* Minimum yükseklik */
+}
+
+.post h2 {
+    font-family: 'Montserrat', sans-serif; /* Yazı tipi Montserrat */
+    font-weight: bold; /* Kalın yazı */
+    margin-top: 0; /* Üst boşluğu kaldırır */
+    margin-bottom: 10px; /* Alt boşluk ekler */
+}
+
+.post-summary {
+    color: #6c757d; /* Yazı rengi */
+    margin-bottom: 20px; /* Alt boşluk ekler */
+}
+
+.post-content {
+    color: #6c757d; /* Yazı rengi */
+    margin-bottom: 20px; /* Alt boşluk ekler */
+}
+
+.post-footer {
+    display: flex;
+    justify-content: space-between; /* Elemanları yatayda iki uçta konumlandırır */
+    align-items: center; /* Dikeyde ortalar */
+    margin-top: auto; /* Üst boşluk ekler */
+}
+
+.post-footer p {
+    margin: 0; /* Tarih etrafındaki boşlukları kaldırır */
+}
+
+.post button {
+    background-color: #f1f1f1; /* Buton arka plan rengi beyaza yakın */
+    color: #000000; /* Buton yazı rengi siyah */
+    border: none; /* Buton kenarlıklarını kaldırır */
+    padding: 10px 20px; /* Buton iç boşlukları */
+    cursor: pointer; /* Fare imlecini işaretçi yapar */
+    border-radius: 15px; /* Buton kenarlarını yuvarlar */
+}
+
+.post button:hover {
+    background-color: #e0e0e0; /* Buton üzerine gelindiğinde arka plan rengi */
+}
+
+/* Modal Stilleri */
+.modal {
+    display: none; /* Modal başlangıçta gizli */
+    position: fixed; /* Sabit konum */
+    z-index: 1; /* Üstte görünür */
+    left: 0;
+    top: 0;
+    width: 100%; /* Tam genişlik */
+    height: 100%; /* Tam yükseklik */
+    overflow: auto; /* Taşma durumunda kaydırma */
+    background-color: rgb(0,0,0); /* Siyah arka plan */
+    background-color: rgba(0,0,0,0.4); /* Siyah arka plan (şeffaf) */
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: 15% auto; /* Ortalar */
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%; /* Genişlik */
+    border-radius: 10px; /* Kenarları yuvarlar */
+    position: relative;
+}
+
+.modal-content h2 {
+    margin: 0 0 20px 0; /* Başlık ve altındaki boşluk */
+    text-align: left; /* Başlığı sola hizala */
+}
+
+.modal-content hr {
+    margin: 20px 0; /* Üst ve alt boşluk */
+}
+
+.modal-content p {
+    opacity: 0.7; /* Yazı opaklığı %70 */
+}
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    position: absolute;
+    top: 10px;
+    right: 20px;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}

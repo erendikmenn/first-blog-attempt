@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/style/style.css">
+    <title>Blog</title>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Insightful Blog</h1>
+            <form action="/create" method="get">
+                <button type="submit">Create Post</button>
+            </form>
+        </div>
+        <div class="posts"> <!-- posts listesini burada oluşturuyoruz -->
+            <% posts.forEach(function(post) { %> <!-- posts listesindeki her post için döngü oluştur -->
+                <div class="post">
+                    <h2><%= post.title %></h2> <!-- postun title'ı burada gösteriliyor -->
+                    <p class="post-summary"><%= post.summary %></p> <!-- postun summary'ı burada gösteriliyor -->
+                    <p class="post-content" style="display: none;"><%= post.content %></p> <!-- postun content'ı burada gösteriliyor -->
+                    <div class="post-footer">
+                        <p><%= post.date %></p>
+                        <button class="read-more" data-title="<%= post.title %>" data-content="<%= post.content %>">Read More</button>
+                    </div>
+                </div>
+            <% }); %> <!-- döngüyü burada bitiriyoruz -->
+        </div>
+    </div>
+
+    <!-- Modal Yapısı -->
+    <div id="modal" class="modal"> <!-- Read More butonuna tıklandığında modal açılıyor -->
+        <div class="modal-content">
+            <span class="close">&times;</span> <!-- Modal'ı kapatmak için kullanılır -->
+            <h2 id="modal-title"></h2> <!-- Modal'ın title'ı burada gösteriliyor -->
+            <hr>
+            <p id="modal-body"></p> <!-- Modal'ın body'si burada gösteriliyor -->
+        </div>
+    </div>
+
+    <script>
+        document.querySelectorAll('.read-more').forEach(button => { // Read More butonuna tıklandığında modal açılıyor
+            button.addEventListener('click', function() {
+                const title = this.getAttribute('data-title'); // Modal'ın title'ı burada gösteriliyor
+                const content = this.getAttribute('data-content'); // Modal'ın body'si burada gösteriliyor
+                document.getElementById('modal-title').innerText = title; // Modal'ın title'ı burada gösteriliyor
+                document.getElementById('modal-body').innerText = content; // Modal'ın body'si burada gösteriliyor
+                document.getElementById('modal').style.display = 'block'; // Modal'ı açıyoruz
+            });
+        });
+
+        document.querySelector('.close').addEventListener('click', function() { // Modal'ı kapatmak için kullanılır
+            document.getElementById('modal').style.display = 'none'; // Modal'ı kapatıyoruz
+        });
+
+        window.addEventListener('click', function(event) { // Modal'ı kapatmak için kullanılır
+            if (event.target == document.getElementById('modal')) { // Modal'ı kapatıyoruz
+                document.getElementById('modal').style.display = 'none'; // Modal'ı kapatıyoruz
+            }
+        });
+    </script>
+</body>
+</html>

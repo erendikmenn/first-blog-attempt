@@ -1,0 +1,83 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    background-color: #f8f9fa;
+    color: #333;
+}
+
+.container {
+    max-width: 600px; /* Container genişliği */
+    margin: 50px auto; /* Ortalar ve üstten boşluk ekler */
+    padding: 20px; /* İç boşluk ekler */
+    background-color: #fff; /* Arka plan rengi beyaz */
+    border-radius: 10px; /* Kenarları yuvarlar */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Hafif gölge ekler */
+}
+
+.back-link {
+    display: inline-block;
+    margin-bottom: 20px;
+    color: #000000; /* Siyah renk */
+    text-decoration: none;
+    font-size: 16px;
+}
+
+.back-link:hover {
+    text-decoration: underline;
+}
+
+h1 {
+    font-size: 24px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.form-group input[type="text"],
+.form-group textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #dee2e6;
+    border-radius: 5px;
+}
+
+.form-group textarea {
+    resize: vertical; /* Sadece dikey olarak yeniden boyutlandırılabilir */
+    min-height: 50px; /* Minimum yükseklik */
+    position: relative;
+    z-index: 1;
+}
+
+.form-group input[type="file"] {
+    display: block;
+    margin-top: 10px;
+}
+
+button[type="submit"] {
+    background-color: #000000; /* Buton arka plan rengi siyah */
+    color: #ffffff; /* Buton yazı rengi beyaz */
+    border: none; /* Buton kenarlıklarını kaldırır */
+    padding: 10px 20px; /* Buton iç boşlukları */
+    cursor: pointer; /* Fare imlecini işaretçi yapar */
+    border-radius: 5px; /* Buton kenarlarını yuvarlar */
+    width: 100%; /* Buton genişliğini input genişliğine eşitler */
+    font-size: 16px;
+}
+
+button[type="submit"]:hover {
+    background-color: #333333; /* Buton üzerine gelindiğinde arka plan rengi */
+}
